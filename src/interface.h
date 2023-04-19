@@ -48,3 +48,16 @@ void drawCrane(int x, int y)
 
     tft.fillRect(squareX, squareY, 30, 30, tft.color565(255, 0, 0)); // arm of crane
 }
+
+void drawSuperiorVision(int angle)
+{  
+    int x_angle_circle = tft.width() - 50;  // Posição x do círculo
+    int y_angle_circle = (tft.height())/2;  // Posição y do círculo
+    int circle_radius = 30;                 // Raio do círculo
+
+    int x1 = x_angle_circle + circle_radius*cos((270+angle)*PI/180);
+    int y1 = y_angle_circle + circle_radius*sin((270+angle)*PI/180);
+
+    tft.drawLine(x_angle_circle, y_angle_circle, x1, y1, ILI9341_WHITE);     // Desenho da linha do raio do círculo
+    tft.drawCircle(x_angle_circle, y_angle_circle, circle_radius, ILI9341_WHITE);    // Desenho do círculo
+}
