@@ -16,13 +16,13 @@ public:
     // Leitura do valor do eixo X
     int readX()
     {
-        return analogRead(_pinX);
+        return round(map(analogRead(_pinX), 0, 4095, -100, 100));
     }
 
     // Leitura do valor do eixo Y
     int readY()
     {
-        return analogRead(_pinY);
+        return round(map(analogRead(_pinY), 0, 4095, -100, 100));
     }
 
 private:
