@@ -3,8 +3,8 @@
 
 struct CraneParams
 {
-    int X = 0;
-    int Y = 0;
+    int X = 45;
+    int Y = 90;
     int angle = 90;
 };
 

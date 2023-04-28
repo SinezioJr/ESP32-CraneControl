@@ -7,20 +7,21 @@ void craneController(CraneParams *crane, int joy_X, int joy_Y, bool select)
     {
         if (joy_X > 50)
         {
-            crane->X += 1;
+            crane->X += 5;
         }
         else if (joy_X < -50)
         {
-            crane->X -= 1;
+            crane->X -= 5;
         }
 
         if (joy_Y > 50)
         {
-            crane->Y += 1;
+            // crane->Y += 5;
+            crane->Y = 90;
         }
         else if (joy_Y < -50)
         {
-            crane->Y -= 1;
+            crane->Y = 90;
         }
 
         if (crane->X < 0)
@@ -31,13 +32,13 @@ void craneController(CraneParams *crane, int joy_X, int joy_Y, bool select)
         {
             crane->X = 89;
         }
-        if (crane->Y < 0)
+        if (crane->Y < 30)
         {
-            crane->Y = 0;
+            crane->Y = 30;
         }
-        else if (crane->Y > 128)
+        else if (crane->Y > 140)
         {
-            crane->Y = 128;
+            crane->Y = 140;
         }
     }
     else
@@ -45,11 +46,11 @@ void craneController(CraneParams *crane, int joy_X, int joy_Y, bool select)
 
         if (joy_X > 50)
         {
-            crane->angle += 1;
+            crane->angle += 5;
         }
         else if (joy_X < -50)
         {
-            crane->angle -= 1;
+            crane->angle -= 5;
         }
 
         if (crane->angle < 0)
